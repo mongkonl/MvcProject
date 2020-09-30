@@ -1,0 +1,98 @@
+﻿@model MvcProject.Models.tblcustomerModel;
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Register Customer</h1>
+
+<div class="row">
+
+    <div class="col-lg-3"></div>
+
+    <div class="col-lg-6 table table-bordered">
+
+        <br />
+
+        <form asp-action="Index" asp-controller="Main">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+
+                <label asp-for="NAME" class="text-success"></label>
+
+                <input type="text" asp-for="NAME" class="form-control" />
+
+                <span asp-validation-for="NAME" class="text-danger"></span>
+
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="LASTNAME" class="text-success"></label>
+
+                <input type="text" asp-for="LASTNAME" id="fddd" class="form-control" />
+
+
+                <span asp-validation-for="LASTNAME" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="SEX" class="text-success"></label>&nbsp;
+
+                Male : <input type="radio" asp-for="SEX" id="dds" value="Male" />
+                Female : <input type="radio" asp-for="SEX" id="sqqq" value="Female" />
+
+
+                <span asp-validation-for="SEX" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="MOBILE" class="text-success"></label>
+
+                <input type="text" asp-for="MOBILE" class="form-control" />
+
+
+                <span asp-validation-for="MOBILE" class="text-danger"></span>
+
+
+
+            </div>
+            <div class="form-group">
+
+                <label asp-for="JOB" class="text-success"></label>
+
+                <select asp-for="JOB"
+                        class="form-control"
+                        asp-items="@(new SelectList(@ViewBag.ListJob,"ID", "NAME"))">
+                </select>
+
+
+                <span asp-validation-for="JOB" class="text-danger"></span>
+
+
+            </div>
+
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+
+        <br />
+
+    </div>
+
+
+    <div class="col-lg-3"></div>
+
+
+</div>
